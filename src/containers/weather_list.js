@@ -6,6 +6,7 @@ import GoogleMap from '../components/google_map';
 class WeatherList extends Component {
     renderWeather(cityData) {
         // console.log(cityData.weather.main.pressure);
+        console.log(cityData)
         const name = cityData.name;
         // Convert to Celsius
         // const temps = _.map(cityData.list.map(weather => weather.main.temp), (temp) => temp - 273);

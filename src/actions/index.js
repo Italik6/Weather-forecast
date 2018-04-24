@@ -4,12 +4,22 @@ const ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
-export function fetchWeather(city) {
+export function fetchWeather (city) {
     const url = `${ROOT_URL}&q=${city}`;
     const request = axios.get(url);
-   
-    return {
-        type: FETCH_WEATHER,
-        payload: request
+
+    return (dispatch) => {
+        request
+        .then(({data}) => {
+            console.log(data)
+            dispatch({type: FETCH_WEATHER, payload: data})
+        })
+        .catch((error) => { 
+            console.log(error.message);
+            // return {
+            //   type: FETCH_WEATHER_ERROR,
+            //   payload: error
+            // };
+          });
     };
 }

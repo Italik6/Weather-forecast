@@ -12,11 +12,9 @@ export function fetchWeather (city) {
     return (dispatch) => {
         request
         .then(({data}) => {
-            console.log(data)
             dispatch({type: FETCH_WEATHER, payload: data})
         })
         .catch((error) => { 
-            console.log(error.message);
             dispatch({type: FETCH_WEATHER_ERROR, payload: error})
           });
     };

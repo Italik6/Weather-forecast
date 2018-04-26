@@ -6,7 +6,6 @@ import Alert from '../components/alert';
 
 class WeatherList extends Component {
     renderWeather(cityData) {
-        // console.log(cityData.weather.main.pressure);
         console.log(cityData)
         const name = cityData.name;
         // Convert to Celsius
@@ -28,7 +27,7 @@ class WeatherList extends Component {
     render() {
         return (
             <div>
-                {/* {(this.props.italik) ? <Alert /> : null} */}
+                {/* {(this.props.isVisible) ? <Alert /> : null} */}
                 <table className="table table-hover">
                     <thead>
                         <tr>
@@ -47,8 +46,8 @@ class WeatherList extends Component {
     }
 }
 
-function mapStateToProps({ weather, italik }) {
-    return { weather, italik };
+function mapStateToProps({ weather }) {
+    return { weather };
 }
 
 export default connect(mapStateToProps)(WeatherList);

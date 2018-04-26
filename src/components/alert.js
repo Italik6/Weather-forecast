@@ -6,4 +6,4 @@ export default (props) => {
                 <strong>Warning!</strong> Indicates a warning that might need attention.
             </div>
         );
-    }
+    };

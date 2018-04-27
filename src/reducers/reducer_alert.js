@@ -1,11 +1,11 @@
 import { FETCH_WEATHER, FETCH_WEATHER_ERROR } from '../actions/index';
 
-export default function (state = [], action) {
+export default function (state = false, action) {
     switch (action.type) {
         case FETCH_WEATHER:
-            return [...state, action.payload];
+            return false;
         case FETCH_WEATHER_ERROR: 
-            return state;
+            return true;
         }
         return state;
 }

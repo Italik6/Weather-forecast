@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart';
 import GoogleMap from '../components/google_map';
+import Alert from '../components/alert';
 
 class WeatherList extends Component {
     renderWeather(cityData) {
@@ -24,25 +25,28 @@ class WeatherList extends Component {
 
     render() {
         return (
-            <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th>City</th>
-                        <th>Temperature (C)</th>
-                        <th>Pressure (hPa)</th>
-                        <th>Humidity (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.props.weather.map(this.renderWeather)}
-                </tbody>
-            </table>
+            <div>
+                {this.props.isVisible ? <Alert /> : null }
+                <table className="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Temperature (C)</th>
+                            <th>Pressure (hPa)</th>
+                            <th>Humidity (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.weather.map(this.renderWeather)}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
 
-function mapStateToProps({ weather }) {
-    return { weather };
+function mapStateToProps({ weather, isVisible }) {
+    return { weather, isVisible };
 }
 
 export default connect(mapStateToProps)(WeatherList);

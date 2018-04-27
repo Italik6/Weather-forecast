@@ -12,10 +12,10 @@ export function fetchWeather (city) {
     return (dispatch) => {
         request
         .then(({data}) => {
-            dispatch({type: FETCH_WEATHER, payload: data})
+            dispatch({type: FETCH_WEATHER, payload: data});
         })
         .catch((error) => { 
-            dispatch({type: FETCH_WEATHER_ERROR, payload: error})
-          });
+            dispatch({type: FETCH_WEATHER_ERROR, payload: error});
+        });
     };
 }

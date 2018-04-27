@@ -24,9 +24,10 @@ class WeatherList extends Component {
     }
 
     render() {
+  
         return (
             <div>
-                {this.props.isVisible ? <Alert /> : null }
+                {this.props.isVisible ? <Alert alertInfo="Sorry, but city not found." /> : null }
                 <table className="table table-hover">
                     <thead>
                         <tr>
@@ -45,8 +46,8 @@ class WeatherList extends Component {
     }
 }
 
-function mapStateToProps({ weather, isVisible }) {
-    return { weather, isVisible };
+function mapStateToProps({ weather, isVisible, alertInfo }) {
+    return { weather, isVisible, alertInfo };
 }
 
 export default connect(mapStateToProps)(WeatherList);

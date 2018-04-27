@@ -7,5 +7,5 @@ export default function (state = [], action) {
         case FETCH_WEATHER_ERROR: 
             return state;
         }
-        return state;
+    return state;
 }

@@ -27,7 +27,7 @@ class WeatherList extends Component {
   
         return (
             <div>
-                {this.props.isVisible ? <Alert alertInfo="Sorry, but city not found." /> : null }
+                {this.props.isVisible.isVisible ? <Alert alertInfo="Sorry, but city not found." /> : null }
                 <table className="table table-hover">
                     <thead>
                         <tr>

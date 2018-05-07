@@ -4,8 +4,7 @@ import AlertReducer from './reducer_alert';
 
 const rootReducer = combineReducers({
   weather: WeatherReducer,
-  isVisible: AlertReducer,
-  alertInfo: AlertReducer
+  isVisible: AlertReducer
 });
 
 export default rootReducer;

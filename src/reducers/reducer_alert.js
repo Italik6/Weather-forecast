@@ -3,7 +3,6 @@ import { FETCH_WEATHER, FETCH_WEATHER_ERROR } from '../actions/index';
 const initialState = {
     isVisible: false,
 }
-
 export default function (state = initialState, action) {
     switch (action.type) {
         case FETCH_WEATHER:

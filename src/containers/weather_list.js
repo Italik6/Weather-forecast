@@ -24,7 +24,6 @@ class WeatherList extends Component {
     }
 
     render() {
-  
         return (
             <div>
                 {this.props.isVisible.isVisible ? <Alert alertInfo={this.props.isVisible.alertInfo} /> : null }
@@ -42,8 +41,8 @@ class WeatherList extends Component {
                     </tbody>
                 </table>
             </div>
-        )
-    }
+        );
+    };
 }
 
 function mapStateToProps({ weather, isVisible, alertInfo }) {

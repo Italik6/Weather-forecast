@@ -5,12 +5,10 @@ export default function (state = [], action) {
     switch (action.type) {
         case FETCH_WEATHER:
             let checkForDuplicates = _.contains(_.map(_.map(state, 'city'), 'name'), action.payload.city.name);
-            if(checkForDuplicates){
-                alert(action.payload.city.name + " is already on your list.");
-            }
-            return [...state, action.payload];
+            (checkForDuplicates) ? alert(action.payload.city.name + " is already on your list.") : null;
+             return [...state, action.payload];
         case FETCH_WEATHER_ERROR:
-            return state;
+             return state;
         }
     return state;
 }

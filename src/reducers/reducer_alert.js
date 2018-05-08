@@ -1,7 +1,7 @@
 import { FETCH_WEATHER, FETCH_WEATHER_ERROR } from '../actions/index';
 
 const initialState = {
-    isVisible: false
+    isVisible: false,
 }
 
 export default function (state = initialState, action) {
@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
         case FETCH_WEATHER:
             return { isVisible: false };
         case FETCH_WEATHER_ERROR: 
-            return { isVisible: true };
+            return { isVisible: true, alertInfo: "Your city has not found." };
         }
     return state;
 }
